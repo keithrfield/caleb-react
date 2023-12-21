@@ -1,6 +1,8 @@
 import "./index.css";
 import Employee from "./components/Employee";
+import AddEmployee from "./components/addEmployee";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   function updateEmployee(id, newName, newRole) {
@@ -12,6 +14,16 @@ function App() {
       return employee;
     });
     setEmployees(updatedEmployees);
+  }
+
+  function newEmployee(name, role, imgUrl) {
+    const newEmployee = {
+      id: uuidv4(),
+      name: name,
+      role: role,
+      img: imgUrl,
+    };
+    setEmployees([...employees, newEmployee]);
   }
   const showEmployees = true;
   const [employees, setEmployees] = useState([
@@ -76,6 +88,7 @@ function App() {
               );
             })}
           </div>
+          <AddEmployee newEmployee={newEmployee} />
         </>
       ) : (
         <p>You are not permitted to see the employees</p>
