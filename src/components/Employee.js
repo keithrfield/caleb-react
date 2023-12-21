@@ -1,5 +1,3 @@
-import EditEmployee from "./EditEmployee";
-
 function Employee(props) {
   return (
     <div className="w-[350px] m-2 py-8 px-8 max-w-sm bg-cyan-300 shadow-xl shadow-cyan-200/50 rounded-xl space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
@@ -15,12 +13,7 @@ function Employee(props) {
             {props.role ? props.role : "No Role"}
           </p>
         </div>
-        <EditEmployee
-          id={props.id}
-          name={props.name}
-          role={props.role}
-          updateEmployee={props.updateEmployee}
-        />
+        {props.editEmployee}
       </div>
     </div>
   );
