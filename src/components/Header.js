@@ -89,7 +89,7 @@ function Header(props) {
         )}
       </Disclosure>
       <div className="bg-gray-300">
-        <div className="max-w-7xl mx-auto  min-h-screen py-2.5 px-2">
+        <div className="max-w-7xl mx-auto  min-h-screen py-2.5 px-3">
           {props.children}
         </div>
       </div>
